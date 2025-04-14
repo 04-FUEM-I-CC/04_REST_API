@@ -1,6 +1,9 @@
 # 04_REST_API
 
 ```
+// Node-Version überprüfen
+node -v
+
 // Projekt initialisieren
 npm init -y 
 
