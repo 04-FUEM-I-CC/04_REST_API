@@ -37,3 +37,20 @@ app.get('/api/jpg', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', '404.jpg'));
 });
 
+/** POST */
+
+// Middleware, um JSON-Daten im Request-Body zu parsen
+app.use(express.json());
+
+// POST-Endpunkt
+app.post('/api/post', (req, res) => {
+    const requestData = req.body; // Zugriff auf die JSON-Daten im Body
+    console.log('Empfangene Daten:', requestData);
+
+    // Antwort an den Client
+    res.status(201).json({
+        message: 'Daten erfolgreich empfangen!',
+        data: requestData,
+    });
+});
+
